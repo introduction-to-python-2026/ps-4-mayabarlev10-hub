@@ -20,8 +20,6 @@ def split_at_first_digit(formula):
    
 
 
-import re
-
 def split_before_each_uppercases(formula):
     """
     מפצלת מחרוזת לרשימת מחרוזות, כאשר הפיצול מתבצע לפני כל אות רישית חדשה.
@@ -37,4 +35,4 @@ def split_before_each_uppercases(formula):
     parts_string = re.sub(r'(?<!^)(?=[A-Z])', r' ', formula)
     
     # פיצול המחרוזת לפי הרווחים שהוספנו
-    return parts_string.split(' ')
+    
