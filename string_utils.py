@@ -7,6 +7,7 @@ def split_at_first_digit(formula):
             break
             
 
+    
     if first_digit_index != -1:
 
         non_digit_part = formula[:first_digit_index]
