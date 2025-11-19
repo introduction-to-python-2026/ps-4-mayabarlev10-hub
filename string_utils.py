@@ -1,29 +1,36 @@
 def split_at_first_digit(formula):
-    first_digit_index = -1
-    
-    for i, char in enumerate(formula):
-        if char.isdigit():
-            first_digit_index = i
-            break
-            
-
-    
-    if first_digit_index != -1:
-
-        non_digit_part = formula[:first_digit_index]
-        digit_and_rest_part = formula[first_digit_index:]
-        return (non_digit_part, digit_and_rest_part) 
-    else:
-
-        non_digit_part = formula
-        digit_and_rest_part = ""
-        return (non_digit_part, digit_and_rest_part)
-   
+    word = ""
+    num = ""
+    for split in formula:
+        if split.isdigit():
+            num+=split
+        else:
+            word+=split
+    if num == "":
+        num = "1"
+    num_int = int(num)
+    return word , num_int
 
 
 def split_before_each_uppercases(formula):
+    word = ""
+    new_formula = []
+    word = formula [0]
+    index = 1
+    while index < len(formula):
+        if formula[index].isupper() == False:
+            word+=formula[index]
+            index+=1
+        else: 
+            new_formula.append(word)
+            word = formula[index]
+            index+=1
+    new_formula.append(word)
+    return new_formula
+            
+            
 
-    parts_string = re.sub(r'(?<!^)(?=[A-Z])', r' ', formula)
-    
 
-    return parts_string.split(' ')
+
+
+ 
