@@ -15,6 +15,8 @@ def split_at_first_digit(formula):
 def split_before_each_uppercases(formula):
     word = ""
     new_formula = []
+    if not formula:
+        return []
     word = formula [0]
     index = 1
     while index < len(formula):
